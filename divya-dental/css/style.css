@@ -178,6 +178,60 @@ img {
     transform: translateY(-2px);
 }
 
+.wa-btn {
+    background-color: #25D366;
+    color: var(--white);
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    border: none;
+    transition: var(--transition);
+}
+
+.wa-btn:hover {
+    background-color: #128c7e;
+    color: var(--white);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+    transform: translateY(-2px);
+}
+
+.fb-btn {
+    background-color: #1877F2;
+    color: var(--white);
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(24, 119, 242, 0.3);
+    border: none;
+    transition: var(--transition);
+}
+
+.fb-btn:hover {
+    background-color: #166fe5;
+    color: var(--white);
+    box-shadow: 0 6px 16px rgba(24, 119, 242, 0.4);
+    transform: translateY(-2px);
+}
+
+.jd-btn {
+    background-color: #ea580c;
+    color: var(--white);
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+    border: none;
+    transition: var(--transition);
+}
+
+.jd-btn:hover {
+    background-color: #c2410c;
+    color: var(--white);
+    box-shadow: 0 6px 16px rgba(234, 88, 12, 0.4);
+    transform: translateY(-2px);
+}
+
 /* Hero Section */
 .hero-section {
     position: relative;
@@ -726,7 +780,9 @@ img {
 .footer-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
     padding-bottom: 40px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 20px;
