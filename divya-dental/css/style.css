@@ -25,6 +25,10 @@
     font-family: 'Inter', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--secondary-color);
     color: var(--text-dark);
@@ -93,24 +97,26 @@ img {
 .primary-btn {
     background-color: var(--primary-color);
     color: var(--white);
-    box-shadow: 0 8px 16px var(--shadow-color);
+    box-shadow: 0 4px 14px 0 rgba(12, 130, 128, 0.39);
 }
 
 .primary-btn:hover {
     background-color: var(--primary-dark);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 20px var(--shadow-color);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(12, 130, 128, 0.4);
 }
 
 .secondary-btn {
     background-color: var(--white);
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.05);
 }
 
 .secondary-btn:hover {
     background-color: var(--primary-light);
-    transform: translateY(-3px);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(12, 130, 128, 0.15);
 }
 
 /* Header */
@@ -156,17 +162,19 @@ img {
 }
 
 .call-btn {
-    background-color: var(--accent-red);
-    color: var(--white);
+    background-color: var(--primary-light);
+    color: var(--primary-color);
     padding: 10px 24px;
     border-radius: 50px;
     font-weight: 600;
-    box-shadow: 0 4px 12px rgba(217, 56, 63, 0.3);
+    box-shadow: none;
+    border: 1px solid rgba(12, 130, 128, 0.2);
 }
 
 .call-btn:hover {
-    background-color: var(--accent-dark);
-    box-shadow: 0 6px 16px rgba(217, 56, 63, 0.4);
+    background-color: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 6px 16px rgba(12, 130, 128, 0.2);
     transform: translateY(-2px);
 }
 
@@ -780,8 +788,112 @@ img {
     font-size: 0.9rem;
 }
 
-/* Responsive */
+/* Animations & Scroll Reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal.fade-left {
+    transform: translateX(-50px);
+}
+
+.reveal.fade-left.active {
+    transform: translateX(0);
+}
+
+.reveal.fade-right {
+    transform: translateX(50px);
+}
+
+.reveal.fade-right.active {
+    transform: translateX(0);
+}
+
+.delay-100 {
+    transition-delay: 100ms;
+}
+
+.delay-200 {
+    transition-delay: 200ms;
+}
+
+.delay-300 {
+    transition-delay: 300ms;
+}
+
+.delay-400 {
+    transition-delay: 400ms;
+}
+
+/* About Clinic Section (New) */
+.about-section {
+    background-color: var(--white);
+    padding: 100px 0 60px;
+    position: relative;
+    z-index: 10;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-size: 2.8rem;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 24px;
+    line-height: 1.8;
+}
+
+.about-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.stat-item h4 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.stat-item p {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
 @media (max-width: 1024px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .about-stats {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
     .trust-container {
         grid-template-columns: repeat(2, 1fr);
     }
